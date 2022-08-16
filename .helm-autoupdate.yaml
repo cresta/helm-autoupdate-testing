@@ -2,12 +2,12 @@ charts:
 - chart:
     name: aws-vpc-cni
     repository: https://aws.github.io/eks-charts
-    version: *
+    version: "*"
   identity: aws-vpc-cni
 - chart:
     name: datadog
     repository: https://helm.datadoghq.com
-    version: *
+    version: "*"
   identity: datadog
 filename_regex:
 - .*\.yaml
