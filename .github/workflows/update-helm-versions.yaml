@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: update helm
-        uses: cresta/helm-autoupdate@v1.1
+        uses: cresta/helm-autoupdate@v1.2
       - name: Create PR with changes
         uses: peter-evans/create-pull-request@v3
         id: make-pr
