@@ -1,0 +1,24 @@
+name: Force a helm update
+on:
+  workflow_dispatch:
+jobs:
+  plantrigger:
+    runs-on: ubuntu-latest
+    name: Force helm update
+    steps:
+      - name: Checkout
+        uses: actions/checkout@va
+      - name: update helm
+        uses: cresta/helm-autoupdate
+      - name: Create PR with changes
+        uses: peter-evans/create-pull-request@v3
+        id: make-pr
+        with:
+          branch: helm-updates
+          delete-branch: true
+          title: "Force helm updates"
+          labels: forced-workflow
+          committer: Forced updates <noreply@cresta.ai>
+          body: "Updated helm versions"
+          commit-message: "Updates helm versions"
+
