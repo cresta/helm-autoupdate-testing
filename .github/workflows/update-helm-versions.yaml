@@ -1,6 +1,8 @@
 name: Force a helm update
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
 jobs:
   plantrigger:
     runs-on: ubuntu-latest
@@ -12,7 +14,7 @@ jobs:
         uses: cresta/helm-autoupdate@v1.5
       - name: Create PR with changes
         uses: peter-evans/create-pull-request@v3
-        id: make-pr
+        id: cpr
         with:
           branch: helm-updates
           delete-branch: true
@@ -21,4 +23,3 @@ jobs:
           committer: Forced updates <noreply@cresta.ai>
           body: "Updated helm versions"
           commit-message: "Updates helm versions"
-
