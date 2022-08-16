@@ -1,0 +1,16 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: aws-vpc-cni
+spec:
+  chart:
+    spec:
+      chart: aws-vpc-cni
+      sourceRef:
+        kind: HelmRepository
+        name: aws
+      version: 0.0.1 # helm:autoupdate:aws-vpc-cni
+  interval: 1m0s
+  timeout: 10
+  values:
+    replicaCount: 1
