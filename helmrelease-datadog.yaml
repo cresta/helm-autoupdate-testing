@@ -9,7 +9,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: datadog
-      version: 3.30.8 # helm:autoupdate:datadog
+      version: 3.30.9 # helm:autoupdate:datadog
   interval: 1m0s
   timeout: 10
   values:
