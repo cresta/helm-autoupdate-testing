@@ -9,7 +9,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: aws
-      version: 1.15.3 # helm:autoupdate:aws-vpc-cni
+      version: 1.15.4 # helm:autoupdate:aws-vpc-cni
   interval: 1m0s
   timeout: 10
   values:
