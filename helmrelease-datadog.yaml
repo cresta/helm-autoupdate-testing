@@ -13,4 +13,7 @@ spec:
   interval: 1m0s
   timeout: 10
   values:
+    datadog:
+      operator:
+        enabled: false
     replicaCount: 1
